@@ -1,6 +1,7 @@
 {
   "devDependencies": {
     "@types/node": "^25.3.0",
+    "esbuild": "^0.27.3",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3"
   },
@@ -9,7 +10,6 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "esbuild": "^0.27.3",
     "get-tsconfig": "^4.13.6",
     "resolve-pkg-maps": "^1.0.0",
     "undici-types": "^7.18.2"
@@ -17,6 +17,7 @@
   "scripts": {
     "start": "tsx src/index.ts",
     "build": "tsc",
+    "bundle": "npx esbuild src/index.ts --bundle --minify --platform=node --format=esm --outfile=dist/index.js --banner:js=\"import { createRequire } from 'module'; const require = createRequire(import.meta.url);\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
