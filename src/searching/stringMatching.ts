@@ -1,7 +1,7 @@
 import { ask } from "../utils/consoleInput.js";
 
 export default async function stringMatching(verbose: boolean = true): Promise<void> {
-    console.log("Selection Sort")
+    console.log("String Matching Algorithm")
 
     const base: string = await ask("Enter Base String: ");
     const search: string = await ask("Enter Search String: ");
