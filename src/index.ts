@@ -1,7 +1,7 @@
 import { Key } from "node:readline";
 import stringMatching from "./searching/stringMatching.js";
 import selectionSort from "./sorting/selectionSort.js";
-import { readKey } from "./utils/consoleInput.js";
+import { readKey, closeInput } from "./utils/consoleInput.js";
 import linearSearch from "./searching/linearSearch.js";
 
 console.log(`
@@ -19,12 +19,13 @@ async function main(): Promise<void> {
     console.log("\n" + JSON.stringify(key, null, 2));
     switch (key.name) {
         case "1":
-            linearSearch();
+            await linearSearch();
             break;
         case "2":
-            stringMatching();
+            await stringMatching();
             break;
     }
+    closeInput();
     return;
 }
 

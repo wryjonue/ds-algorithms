@@ -25,3 +25,7 @@ export const ask = async (question: string): Promise<string> => {
     process.stdout.write(question);
     return await readLine();
 }
+
+export const closeInput = () => {
+    rlInterface.close();
+}
